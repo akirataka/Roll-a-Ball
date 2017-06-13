@@ -2,14 +2,26 @@
 
 public class PlayerCollider3D : MonoBehaviour {
 
-    public ScoreScript scoreScript;
+    //-------------------------------------------------------------------------
+    // Varibles
+    private ScoreScript scoreScript;
+    //-------------------------------------------------------------------------
 
-    void OnTriggerEnter ( Collider other )
+    //-------------------------------------------------------------------------
+    private void Awake ()
+    {
+        scoreScript = FindObjectOfType<ScoreScript> ();
+    }
+    //-------------------------------------------------------------------------
+
+    //-------------------------------------------------------------------------
+    private void OnTriggerEnter ( Collider other )
 	{
         if ( other.tag == "PickUp" ) {
             other.gameObject.SetActive ( false );
             scoreScript.IncrementScore();
         }
 	}
-	
+    //-------------------------------------------------------------------------
+
 }
