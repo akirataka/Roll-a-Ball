@@ -120,3 +120,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30cf7f12354640e458bfdc2695a196dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vectorAngular: {x: 15, y: 30, z: 45}

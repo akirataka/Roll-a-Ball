@@ -2,12 +2,7 @@
 
 public class ObjectRotator : MonoBehaviour {
 
-    private Vector3 vectorAngular;
-    
-    private void Start ()
-    {
-        vectorAngular = new Vector3 ( 15 , 30 , 45 );
-    }
+    public Vector3 vectorAngular;
 
     private void Update ()
     {
