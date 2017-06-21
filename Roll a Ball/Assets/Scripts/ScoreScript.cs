@@ -4,21 +4,16 @@ using UnityEngine.UI;
 public class ScoreScript : MonoBehaviour {
 
     //-------------------------------------------------------------------------
-    // Varibles
+    // Variables
     public int      score;
     private Text     scoreText;
     //-------------------------------------------------------------------------
 
     //-------------------------------------------------------------------------
+    // Awake is used to references between Objects or Components
     private void Awake ()
     {
         scoreText = GetComponent<Text> ();
-    }
-    //-------------------------------------------------------------------------
-
-    //-------------------------------------------------------------------------
-    private void Start () {
-        SetScoreText ();
     }
     //-------------------------------------------------------------------------
 

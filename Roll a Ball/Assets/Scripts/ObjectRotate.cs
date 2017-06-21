@@ -1,25 +1,18 @@
 ﻿using UnityEngine;
 
-public class ObjectRotator : MonoBehaviour {
+public class ObjectRotate : MonoBehaviour {
 
     //-------------------------------------------------------------------------
-    // Varibles
+    // Variables
     public Vector3 vectorAngular;
     //-------------------------------------------------------------------------
 
     //-------------------------------------------------------------------------
+    // FixedUpdate is used to Objects Movement
     private void FixedUpdate ()
     {
         transform.Rotate ( vectorAngular * Time.deltaTime );
     }
     //-------------------------------------------------------------------------
 
-    /*
-    //-------------------------------------------------------------------------
-    private void Update ()
-    {
-        transform.Rotate ( vectorAngular * Time.deltaTime );
-    }
-    //-------------------------------------------------------------------------
-    */
 }

@@ -3,11 +3,12 @@
 public class PlayerCollider3D : MonoBehaviour {
 
     //-------------------------------------------------------------------------
-    // Varibles
+    // Variables
     private ScoreScript scoreScript;
     //-------------------------------------------------------------------------
 
     //-------------------------------------------------------------------------
+    // Awake is used to references between Objects or Components
     private void Awake ()
     {
         scoreScript = FindObjectOfType<ScoreScript> ();
@@ -19,7 +20,12 @@ public class PlayerCollider3D : MonoBehaviour {
 	{
         if ( other.tag == "PickUp" ) {
             other.gameObject.SetActive ( false );
-            scoreScript.IncrementScore();
+
+            if ( scoreScript )
+            {
+                scoreScript.IncrementScore ();
+            }
+
         }
 	}
     //-------------------------------------------------------------------------

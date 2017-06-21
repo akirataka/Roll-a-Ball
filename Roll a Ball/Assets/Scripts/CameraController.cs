@@ -3,13 +3,13 @@
 public class CameraController : MonoBehaviour {
 
     //-------------------------------------------------------------------------
-    // Varibles
+    // Variables
     private Transform   player;
     private Vector3     cameraFixed;
     //-------------------------------------------------------------------------
 
     //-------------------------------------------------------------------------
-    // Awake is used to references between Objects
+    // Awake is used to references between Objects or Components
     private void Awake ()
     {
         player = GameObject.FindWithTag ( "Player" ).transform;
@@ -17,6 +17,7 @@ public class CameraController : MonoBehaviour {
     //-------------------------------------------------------------------------
 
     //-------------------------------------------------------------------------
+    // Start is used to...
     private void Start ()
     {
         cameraFixed = transform.position - player.position;

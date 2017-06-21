@@ -4,16 +4,20 @@ using UnityEngine.UI;
 public class WinScore : MonoBehaviour {
 
     //-------------------------------------------------------------------------
-    // Varibles
+    // Variables
     private Text     winText;
+
+    public int numPickUps;
 
     public ScoreScript scoreScript;
     //-------------------------------------------------------------------------
 
     //-------------------------------------------------------------------------
+    // Awake is used to references between Objects or Components
     private void Awake ()
     {
         winText = GetComponent<Text> ();
+        numPickUps = GameObject.FindGameObjectsWithTag ( "PickUp" ).Length;
     }
     //-------------------------------------------------------------------------
 
@@ -27,7 +31,7 @@ public class WinScore : MonoBehaviour {
     //-------------------------------------------------------------------------
     private void Update ()
     {
-        if (scoreScript.score >= 12 ) {
+        if ( scoreScript.score >= numPickUps ) {
             winText.text = "You Win!";
         }
     }

@@ -3,13 +3,13 @@
 public class PlayerController3D : MonoBehaviour {
 
     //-------------------------------------------------------------------------
-    // Varibles
+    // Variables
     public float speed;
-
     private Rigidbody rb;
     //-------------------------------------------------------------------------
 
     //-------------------------------------------------------------------------
+    // Awake is used to references between Objects or Components
     private void Awake ()
     {
         rb = GetComponent<Rigidbody> ();
