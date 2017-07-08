@@ -1,35 +1,32 @@
 ﻿using UnityEngine;
 
-public class CameraController : MonoBehaviour {
+public class PlayerController3D : MonoBehaviour {
 
     //-------------------------------------------------------------------------
     // Variables
-    private Transform   player;
-    private Vector3     cameraFixed;
+    public  float       speed;
+    private Rigidbody   rigibody;
     //-------------------------------------------------------------------------
 
     //-------------------------------------------------------------------------
     // Awake is used to references between Objects or Components
     private void Awake ()
     {
-        player = GameObject.FindWithTag ( "Player" ).transform;
+        rigibody = GetComponent<Rigidbody> ();
     }
     //-------------------------------------------------------------------------
 
     //-------------------------------------------------------------------------
-    // Start is used to...
-    private void Start ()
+    // FixedUpdate is used to Objects Movement
+    private void FixedUpdate()
     {
-        cameraFixed = transform.position - player.position;
+        float moveHorizontal = Input.GetAxis( "Horizontal" );
+        float moveVertical = Input.GetAxis( "Vertical" );
+
+        Vector3 movement = new Vector3( moveHorizontal , 0 , moveVertical );
+
+        rigibody.AddForce ( speed * movement , ForceMode.Force );
     }
     //-------------------------------------------------------------------------
 
-    //-------------------------------------------------------------------------
-    // LateUpdate is used for Camera Movement
-    private void LateUpdate ()
-    {
-        transform.position = player.position + cameraFixed;
-    }
-    //-------------------------------------------------------------------------
-    
 }

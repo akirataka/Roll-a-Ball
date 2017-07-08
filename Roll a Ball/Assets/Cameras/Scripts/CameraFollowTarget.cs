@@ -1,31 +1,26 @@
 ﻿using UnityEngine;
 
-public class PlayerController3D : MonoBehaviour {
+public class CameraFollowTarget : MonoBehaviour {
 
     //-------------------------------------------------------------------------
     // Variables
-    public float speed;
-    private Rigidbody rb;
+    public  Transform   target;
+    private Vector3     offset;
     //-------------------------------------------------------------------------
 
     //-------------------------------------------------------------------------
-    // Awake is used to references between Objects or Components
-    private void Awake ()
+    private void Start ()
     {
-        rb = GetComponent<Rigidbody> ();
+        offset = transform.position - target.position;
     }
     //-------------------------------------------------------------------------
 
     //-------------------------------------------------------------------------
-    private void FixedUpdate()
-	{
-        float moveHorizontal = Input.GetAxis( "Horizontal" );
-        float moveVertical = Input.GetAxis( "Vertical" );
-
-        Vector3 movement = new Vector3( moveHorizontal , 0 , moveVertical );
-
-        rb.AddForce ( movement * speed );
-	}
+    // LateUpdate is used for Camera Movement
+    private void LateUpdate ()
+    {
+        transform.position = target.position + offset;
+    }
     //-------------------------------------------------------------------------
-
+    
 }
