@@ -31,7 +31,7 @@ public class WinScore : MonoBehaviour {
     //-------------------------------------------------------------------------
     private void Update ()
     {
-        if ( scoreScript.score >= numPickUps ) {
+        if ( scoreScript.scoreNumber >= numPickUps ) {
             winText.text = "You Win!";
         }
     }

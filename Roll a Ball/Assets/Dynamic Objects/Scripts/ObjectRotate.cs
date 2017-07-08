@@ -11,7 +11,7 @@ public class ObjectRotate : MonoBehaviour {
     // FixedUpdate is used to Physics Objects Movement
     private void FixedUpdate ()
     {
-        transform.Rotate ( vectorAngular * Time.deltaTime );
+        transform.Rotate ( Time.deltaTime * vectorAngular );
     }
     //-------------------------------------------------------------------------
 

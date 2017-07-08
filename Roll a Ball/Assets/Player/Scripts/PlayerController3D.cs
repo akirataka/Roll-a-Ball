@@ -25,7 +25,7 @@ public class PlayerController3D : MonoBehaviour {
 
         Vector3 movement = new Vector3( moveHorizontal , 0 , moveVertical );
 
-        rigibody.AddForce ( speed * movement , ForceMode.Force );
+        rigibody.AddForce ( speed * movement );
     }
     //-------------------------------------------------------------------------
 
